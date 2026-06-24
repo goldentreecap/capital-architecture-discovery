@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bradham Family Capital Architecture Discovery</title>
+  <style>
+    :root{--navy:#101827;--gold:#c7a44b;--cream:#f7f3ea;--paper:#fff;--ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--green:#0f766e;--red:#b91c1c;--yellow:#a16207;--blue:#1d4ed8}*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,var(--cream),#fff);color:var(--ink)}.app{max-width:1180px;margin:0 auto;padding:28px 18px 60px}.header{background:var(--navy);color:#fff;border-radius:24px;padding:28px;box-shadow:0 20px 40px rgba(16,24,39,.18);position:relative;overflow:hidden}.header:after{content:"";position:absolute;right:-80px;top:-80px;width:240px;height:240px;border-radius:50%;background:rgba(199,164,75,.16)}.brand{letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:800;font-size:13px}h1{font-size:34px;line-height:1.1;margin:10px 0 8px}.sub{font-size:17px;color:#d1d5db;max-width:850px;line-height:1.5}.meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.pill{border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:8px 12px;color:#f3f4f6;font-size:13px}.shell{display:grid;grid-template-columns:285px 1fr;gap:22px;margin-top:22px}.side{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:16px;align-self:start;position:sticky;top:16px}.stepnav{list-style:none;margin:0;padding:0}.stepnav li{padding:9px 10px;border-radius:12px;color:var(--muted);font-size:13px;display:flex;gap:9px;align-items:center}.stepnav li.active{background:#f4ead0;color:var(--navy);font-weight:800}.dot{width:22px;height:22px;border-radius:50%;background:#f3f4f6;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex:0 0 auto}.active .dot{background:var(--gold);color:#fff}.progress{height:10px;background:#eef0f3;border-radius:999px;overflow:hidden;margin-top:16px}.bar{height:100%;width:0;background:var(--gold);transition:.25s}.content{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:0 10px 30px rgba(16,24,39,.06)}.section{display:none}.section.active{display:block}.eyebrow{text-transform:uppercase;letter-spacing:.08em;color:var(--gold);font-size:12px;font-weight:900}.section h2{margin:8px 0 8px;font-size:28px}.helper{color:var(--muted);line-height:1.55;margin:0 0 20px}.card{border:1px solid var(--line);border-radius:18px;padding:18px;margin:14px 0;background:#fff}.edu{background:#fbf7ec;border-color:#ead9aa}.soft{background:#f9fafb}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}.field label{display:block;font-weight:800;margin-bottom:6px}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px;font-size:15px;background:#fff}.field textarea{min-height:90px}.options{display:grid;gap:10px}.option{border:1px solid var(--line);border-radius:14px;padding:13px;display:flex;gap:10px;align-items:flex-start;cursor:pointer}.option:hover{border-color:var(--gold);background:#fffaf0}.rangeRow{display:flex;align-items:center;gap:14px}.rangeRow input{flex:1}.bigNumber{font-size:25px;font-weight:900;color:var(--navy);min-width:130px;text-align:right}.small{font-size:13px;color:var(--muted)}.miniTable{width:100%;border-collapse:collapse;margin-top:12px}.miniTable th,.miniTable td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}.miniTable th{background:#f9fafb}.buttons{display:flex;justify-content:space-between;gap:10px;margin-top:24px}.btn{border:0;border-radius:999px;padding:12px 18px;font-weight:900;cursor:pointer}.btn.primary{background:var(--navy);color:white}.btn.secondary{background:#f3f4f6;color:var(--navy)}.btn.gold{background:var(--gold);color:white}.summaryBox{background:#f9fafb;border:1px solid var(--line);border-radius:18px;padding:18px;margin-top:16px}.score{font-size:50px;color:var(--gold);font-weight:950}.scoreSmall{font-size:30px;font-weight:900}.twoCol{columns:2}.warning{color:var(--red);font-weight:800}.success{color:var(--green);font-weight:800}.yellow{color:var(--yellow);font-weight:800}.blue{color:var(--blue);font-weight:800}.scenario{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}.scenario .card{margin:0}.scenarioNum{font-size:22px;font-weight:950;color:var(--navy)}.personHead{display:flex;align-items:center;gap:8px;font-weight:950;color:var(--navy);margin-bottom:10px}.personHead:before{content:"";display:block;width:10px;height:10px;border-radius:50%;background:var(--gold)}.splitCard{border:1px solid var(--line);border-radius:18px;padding:16px;background:#fff}.badge{display:inline-block;border-radius:999px;padding:5px 9px;font-size:12px;font-weight:900}.greenBg{background:#dff7ef;color:#065f46}.yellowBg{background:#fef3c7;color:#92400e}.redBg{background:#fee2e2;color:#991b1b}.checkgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.checkgrid label{border:1px solid var(--line);border-radius:12px;padding:10px;background:white}.printOnly{display:none}.note{border-left:4px solid var(--gold);padding:10px 12px;background:#fffbeb;border-radius:8px;color:#5f4b12}.narrative{font-size:16px;line-height:1.65;color:#263244}.narrative h4{font-size:20px;margin:18px 0 8px;color:var(--navy)}.narrative .callout{background:#fffaf0;border:1px solid #ead9aa;border-radius:16px;padding:14px;margin:12px 0}.narrative ul{padding-left:20px}.narrative p{margin:10px 0}@media(max-width:900px){.shell{grid-template-columns:1fr}.side{position:static}.grid,.grid3,.scenario,.checkgrid{grid-template-columns:1fr}.twoCol{columns:1}h1{font-size:28px}.bigNumber{text-align:left}}@media print{body{background:white}.side,.buttons,.header .meta{display:none}.shell{display:block}.content,.header{box-shadow:none}.section{display:block;page-break-inside:avoid}.header{color:#000;background:#fff;border:1px solid #ddd}.brand{color:#000}.sub{color:#333}.printOnly{display:block}}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <div class="brand">Golden Tree Wealth Partners</div>
+      <h1>Bradham Family Capital Architecture Discovery™</h1>
+      <div class="sub">A guided experience for Jessica and Cole to prepare for Cole's anticipated company-sale proceeds, align family priorities, and build a balanced Capital Architecture Blueprint before funds arrive.</div>
+      <div class="meta"><div class="pill">Estimated time: 25–45 minutes</div><div class="pill">Designed for first-time investors</div><div class="pill">Includes family alignment analysis</div><div class="pill">Private & confidential planning discovery</div></div>
+    </div>
+    <div class="shell">
+      <aside class="side"><ul class="stepnav" id="stepnav"></ul><div class="progress"><div class="bar" id="bar"></div></div><p class="small" id="progressText">Step 1</p></aside>
+      <main class="content">
+        <form id="navigator">
+          <section class="section active" data-title="Overview">
+            <div class="eyebrow">Start Here</div><h2>Welcome, Jessica and Cole.</h2>
+            <p class="helper">Before we talk about investments, taxes, real estate, or future opportunities, this discovery experience is designed to understand the life this money needs to support.</p>
+            <div class="card edu">
+              <h3 style="margin-top:0">Purpose of This Discovery</h3>
+              <p>This Capital Architecture Discovery™ helps Erik understand both of your perspectives before making recommendations. The goal is to identify what matters most to your family, where you naturally agree, where you may see things differently, and how future capital can be organized to support security, flexibility, income, family priorities, and long-term legacy.</p>
+              <p>This is not a test, and there are no wrong answers. Some questions are answered individually by Cole and Jessica because your priorities may not be identical, and that is completely normal. The purpose is to build a balanced strategy that honors both perspectives.</p>
+            </div>
+            <div class="grid">
+              <div class="card soft">
+                <h3 style="margin-top:0">Time Commitment</h3>
+                <p>Please set aside at least <strong>25 to 45 minutes</strong> to complete this thoughtfully. You do not need perfect answers. Honest answers are much more valuable than polished answers.</p>
+                <p>Try to answer based on how you genuinely feel today, not what you think the answer is “supposed” to be.</p>
+              </div>
+              <div class="card soft">
+                <h3 style="margin-top:0">How Your Answers Will Be Used</h3>
+                <p>Your responses will help create a summary of findings that Jessica, Cole, and Erik can review together. The summary is intended to make the next conversation more productive, personal, and balanced.</p>
+                <p>The answers are not used to make automatic investment decisions. They are used to guide discussion, education, planning, and future recommendations.</p>
+              </div>
+            </div>
+            <div class="card">
+              <h3 style="margin-top:0">Privacy & Confidentiality</h3>
+              <p>The information you provide is intended solely for confidential planning discussions with Golden Tree Wealth Partners and Erik Cascio. Please answer openly and honestly so the recommendations can reflect your real priorities, concerns, and goals.</p>
+              <p>This discovery may include personal financial information, family priorities, lifestyle preferences, and planning concerns. These responses should be treated as confidential and used only for the purpose of preparing your Capital Architecture Blueprint and related planning conversations.</p>
+              <p class="small"><strong>Important disclosure:</strong> This discovery tool is for educational, planning, and discussion purposes. It does not replace legal, tax, insurance, or investment advice from the appropriate licensed professionals. Final recommendations should be reviewed with the appropriate advisors before implementation.</p>
+            </div>
+            <div class="card edu"><strong>Important:</strong> The current financial snapshot does not include Cole's future company-sale proceeds. This process is designed to prepare the architecture before the liquidity event occurs.</div>
+            <div class="grid"><div class="field"><label>Client family name</label><input name="familyName" value="Bradham Family"></div><div class="field"><label>Expected timing of payout</label><input name="payoutTiming" placeholder="Example: Q4 2026 / Unknown"></div></div>
+            <div class="card soft">
+              <label class="option"><input type="checkbox" name="overviewAcknowledgement"> <span>I understand the purpose of this discovery and will answer as honestly and thoughtfully as possible.</span></label>
+            </div>
+          </section>
+
+          <section class="section" data-title="Payout">
+            <div class="eyebrow">Step 1</div><h2>Cole's Expected Payout</h2><p class="helper">We are not trying to predict the final number perfectly. We are creating planning ranges so the strategy can adjust once the actual proceeds are known.</p>
+            <div class="grid3">
+              <div class="field"><label>Low case gross payout</label><input type="number" name="lowPayout" id="lowPayout" placeholder="1000000"></div>
+              <div class="field"><label>Expected gross payout</label><input type="number" name="expectedPayout" id="expectedPayout" placeholder="2500000"></div>
+              <div class="field"><label>Best case gross payout</label><input type="number" name="bestPayout" id="bestPayout" placeholder="4000000"></div>
+            </div>
+            <div class="grid">
+              <div class="field"><label>How confident are you in the expected number?</label><select name="payoutConfidence"><option></option><option>Low - still very uncertain</option><option>Moderate - reasonable estimate</option><option>High - strong visibility</option></select></div>
+              <div class="field"><label>How will proceeds likely be paid?</label><select name="payoutStructure"><option></option><option>Lump sum</option><option>Installments</option><option>Earnout / contingent payments</option><option>Combination</option><option>Not sure yet</option></select></div>
+            </div>
+            <div class="field"><label>What assumptions are behind these payout estimates?</label><textarea name="payoutAssumptions" placeholder="Example: based on company valuation range, equity ownership, management guidance, expected sale timeline..."></textarea></div>
+          </section>
+
+          <section class="section" data-title="Taxes">
+            <div class="eyebrow">Step 2</div><h2>Tax Scenario Range</h2><p class="helper">This creates a simple planning range. The final result will depend on equity type, timing, state tax issues, deductions, tax strategy, and professional tax review.</p>
+            <div class="grid">
+              <div class="card"><label><strong>Best case tax rate after strategy</strong></label><div class="rangeRow"><input type="range" min="15" max="50" step="1" value="25" name="bestTaxRate" id="bestTaxRate"><div class="bigNumber" id="bestTaxOut">25%</div></div></div>
+              <div class="card"><label><strong>Worst case tax rate before strategy</strong></label><div class="rangeRow"><input type="range" min="20" max="60" step="1" value="40" name="worstTaxRate" id="worstTaxRate"><div class="bigNumber" id="worstTaxOut">40%</div></div></div>
+            </div>
+            <div class="summaryBox"><strong>Estimated net proceeds after tax assumptions</strong><div id="taxScenarioTable"></div></div>
+            <div class="field"><label>What tax questions or worries do you want answered before the payout?</label><textarea name="taxQuestions" placeholder="Example: how much should we reserve, what can be deferred, how real estate affects taxes, how to avoid surprises..."></textarea></div>
+          </section>
+
+          <section class="section" data-title="Vision">
+            <div class="eyebrow">Step 3</div><h2>Individual Vision & Family Priorities</h2><p class="helper">Please answer separately first. The goal is not to force agreement; it is to understand what each of you wants this liquidity event to make possible.</p>
+            <div class="grid">
+              <div class="splitCard"><div class="personHead">Cole's Perspective</div><div class="field"><label>Five years from today, what would success look like for you?</label><textarea name="coleVision"></textarea></div><div class="field"><label>Which outcome matters most to you?</label><select name="coleSuccess"><option></option><option>Continue building wealth aggressively</option><option>Create enough income to make work optional</option><option>Reduce stress and protect the family</option><option>Build a real estate portfolio</option><option>Create long-term legacy for the kids</option></select></div></div>
+              <div class="splitCard"><div class="personHead">Jessica's Perspective</div><div class="field"><label>Five years from today, what would success look like for you?</label><textarea name="jessVision"></textarea></div><div class="field"><label>Which outcome matters most to you?</label><select name="jessSuccess"><option></option><option>More family time and flexibility</option><option>Reduce stress and protect the family</option><option>Create enough income to make work optional</option><option>Upgrade housing while staying financially safe</option><option>Create long-term legacy for the kids</option></select></div></div>
+            </div>
+            <div class="field"><label>Together, what should this money make possible for your family?</label><textarea name="familyVision" placeholder="Example: freedom, security, less pressure, time with kids, real estate, future home, travel..."></textarea></div>
+          </section>
+
+          <section class="section" data-title="Income">
+            <div class="eyebrow">Step 4</div><h2>Security Reserve & Passive Income Goals</h2><p class="helper">Passive income means income generated from investments such as commercial real estate, investment portfolios, private credit, royalties, or business ownership that does not require full-time employment.</p>
+            <div class="card"><label><strong>Desired family cash reserve</strong></label><div class="rangeRow"><input type="range" min="100000" max="1000000" step="25000" value="250000" name="cashReserve" id="cashReserve"><div class="bigNumber" id="cashReserveOut">$250,000</div></div><p class="small" id="monthsReserve">Approx. 14.1 months of current expenses.</p></div>
+            <div class="grid">
+              <div class="card"><div class="personHead">Cole</div><label><strong>Monthly passive income that would feel comfortable</strong></label><div class="rangeRow"><input type="range" min="0" max="50000" step="1000" value="10000" name="coleMonthlyIncome" id="coleMonthlyIncome"><div class="bigNumber" id="coleMonthlyOut">$10,000</div></div><p class="small" id="coleAnnualOut">$120,000 per year</p></div>
+              <div class="card"><div class="personHead">Jessica</div><label><strong>Monthly passive income that would feel comfortable</strong></label><div class="rangeRow"><input type="range" min="0" max="50000" step="1000" value="12000" name="jessMonthlyIncome" id="jessMonthlyIncome"><div class="bigNumber" id="jessMonthlyOut">$12,000</div></div><p class="small" id="jessAnnualOut">$144,000 per year</p></div>
+            </div>
+            <div class="card"><label><strong>Joint family monthly passive income target</strong></label><div class="rangeRow"><input type="range" min="0" max="50000" step="1000" value="15000" name="familyMonthlyIncome" id="familyMonthlyIncome"><div class="bigNumber" id="familyMonthlyOut">$15,000</div></div><p class="small" id="familyAnnualOut">$180,000 per year. At a 6% assumed income yield, this may require about $3,000,000 in income-producing capital.</p></div>
+            <div class="field"><label>Why is passive income important to your family?</label><textarea name="incomeWhy" placeholder="Example: work optionality, less pressure, family flexibility, travel, future home, education for kids..."></textarea></div>
+          </section>
+
+          <section class="section" data-title="Debts">
+            <div class="eyebrow">Step 5</div><h2>Debt & Liability Strategy</h2><p class="helper">Based on the most recent financial information you provided, we have pre-populated approximate balances below. If any balances have changed, please enter the current amount owed.</p>
+            <table class="miniTable"><thead><tr><th>Debt</th><th>Approximate balance from last review</th><th>Current balance today</th><th>Cole's preference</th><th>Jessica's preference</th></tr></thead><tbody>
+              <tr><td>Auto loans</td><td>$43,000</td><td><input name="autoCurrent" placeholder="$"></td><td><select name="coleAuto"><option></option><option>Pay off</option><option>Keep as-is</option><option>Unsure</option></select></td><td><select name="jessAuto"><option></option><option>Pay off</option><option>Keep as-is</option><option>Unsure</option></select></td></tr>
+              <tr><td>Student loans</td><td>$16,000</td><td><input name="studentCurrent" placeholder="$"></td><td><select name="coleStudent"><option></option><option>Pay off</option><option>Keep as-is</option><option>Unsure</option></select></td><td><select name="jessStudent"><option></option><option>Pay off</option><option>Keep as-is</option><option>Unsure</option></select></td></tr>
+              <tr><td>Primary mortgage</td><td>$343,000</td><td><input name="mortgageCurrent" placeholder="$"></td><td><select name="coleMortgage"><option></option><option>Keep unchanged</option><option>Make principal reduction</option><option>Pay off entirely</option><option>Unsure</option></select></td><td><select name="jessMortgage"><option></option><option>Keep unchanged</option><option>Make principal reduction</option><option>Pay off entirely</option><option>Unsure</option></select></td></tr>
+              <tr><td>Credit cards</td><td>Paid monthly</td><td><input name="creditCurrent" placeholder="$"></td><td><select name="coleCredit"><option></option><option>Continue paying monthly</option><option>Use proceeds to clear any balance</option><option>Unsure</option></select></td><td><select name="jessCredit"><option></option><option>Continue paying monthly</option><option>Use proceeds to clear any balance</option><option>Unsure</option></select></td></tr>
+            </tbody></table>
+            <div class="grid"><div class="field"><label>Cole: which debt bothers you most emotionally?</label><textarea name="coleDebtEmotion"></textarea></div><div class="field"><label>Jessica: which debt bothers you most emotionally?</label><textarea name="jessDebtEmotion"></textarea></div></div>
+            <div class="field"><label>Joint decision preference</label><select name="jointDebtPhilosophy"><option></option><option>Eliminate debt and reduce risk</option><option>Keep low-interest debt and invest capital elsewhere</option><option>Balanced approach</option><option>Unsure until we see the numbers</option></select></div>
+          </section>
+
+          <section class="section" data-title="Home">
+            <div class="eyebrow">Step 6</div><h2>Future Home & Current Home Strategy</h2><p class="helper">You have discussed keeping the current home as a rental and eventually buying or building a new primary residence.</p>
+            <div class="grid"><div class="field"><label>Target future home value</label><input name="futureHomeValue" placeholder="$800,000 / $1,000,000 / Unknown"></div><div class="field"><label>Desired down payment</label><input name="futureHomeDown" placeholder="$"></div></div>
+            <div class="grid"><div class="field"><label>Cole: which feels more likely?</label><select name="coleHomePlan"><option></option><option>Buy an existing home</option><option>Build a custom home</option><option>Not sure yet</option></select></div><div class="field"><label>Jessica: which feels more likely?</label><select name="jessHomePlan"><option></option><option>Buy an existing home</option><option>Build a custom home</option><option>Not sure yet</option></select></div></div>
+            <div class="grid"><div class="field"><label>Cole: what concerns do you have about upgrading homes?</label><textarea name="coleHomeConcerns"></textarea></div><div class="field"><label>Jessica: what concerns do you have about upgrading homes?</label><textarea name="jessHomeConcerns"></textarea></div></div>
+          </section>
+
+          <section class="section" data-title="James & Jack">
+            <div class="eyebrow">Step 7</div><h2>James & Jack: Future Opportunities & Family Legacy</h2><p class="helper">Capital Architecture is ultimately about building a future for the entire family. These questions help personalize the plan around James and Jack, including the values, opportunities, and legacy Jessica and Cole want to create for them.</p>
+            <div class="card edu"><strong>Purpose:</strong> This section is not only about college funding. It is about understanding what kind of opportunities, values, and financial foundation you want James and Jack to have as they grow up.</div>
+            <div class="grid">
+              <div class="splitCard">
+                <div class="personHead">James</div>
+                <div class="card soft"><label><strong>What qualities or values would you most like James to develop as he grows up?</strong></label><div class="checkgrid"><label><input type="checkbox" name="jamesValues" value="Independence"> Independence</label><label><input type="checkbox" name="jamesValues" value="Responsibility"> Responsibility</label><label><input type="checkbox" name="jamesValues" value="Financial literacy"> Financial literacy</label><label><input type="checkbox" name="jamesValues" value="Entrepreneurship"> Entrepreneurship</label><label><input type="checkbox" name="jamesValues" value="Education"> Education</label><label><input type="checkbox" name="jamesValues" value="Leadership"> Leadership</label><label><input type="checkbox" name="jamesValues" value="Creativity"> Creativity</label><label><input type="checkbox" name="jamesValues" value="Community service"> Community service</label><label><input type="checkbox" name="jamesValues" value="Faith or spirituality"> Faith / spirituality</label><label><input type="checkbox" name="jamesValues" value="Resilience"> Resilience</label><label><input type="checkbox" name="jamesValues" value="Other"> Other</label></div></div>
+                <div class="card soft"><label><strong>What opportunities would you most like James to have available in the future?</strong></label><div class="checkgrid"><label><input type="checkbox" name="jamesOpportunities" value="College education"> College education</label><label><input type="checkbox" name="jamesOpportunities" value="Trade school"> Trade school</label><label><input type="checkbox" name="jamesOpportunities" value="Graduate education"> Graduate education</label><label><input type="checkbox" name="jamesOpportunities" value="Starting a business"> Starting a business</label><label><input type="checkbox" name="jamesOpportunities" value="Purchasing a home"> Purchasing a home</label><label><input type="checkbox" name="jamesOpportunities" value="Travel experiences"> Travel experiences</label><label><input type="checkbox" name="jamesOpportunities" value="Financial independence"> Financial independence</label><label><input type="checkbox" name="jamesOpportunities" value="Access to family investments"> Access to family investments</label><label><input type="checkbox" name="jamesOpportunities" value="Other"> Other</label></div></div>
+                <div class="field"><label>Is there anything specific you hope to teach, model, or pass on to James?</label><textarea name="jamesLegacy" placeholder="Values, lessons, opportunities, responsibilities, family traditions..."></textarea></div>
+              </div>
+              <div class="splitCard">
+                <div class="personHead">Jack</div>
+                <div class="card soft"><label><strong>What qualities or values would you most like Jack to develop as he grows up?</strong></label><div class="checkgrid"><label><input type="checkbox" name="jackValues" value="Independence"> Independence</label><label><input type="checkbox" name="jackValues" value="Responsibility"> Responsibility</label><label><input type="checkbox" name="jackValues" value="Financial literacy"> Financial literacy</label><label><input type="checkbox" name="jackValues" value="Entrepreneurship"> Entrepreneurship</label><label><input type="checkbox" name="jackValues" value="Education"> Education</label><label><input type="checkbox" name="jackValues" value="Leadership"> Leadership</label><label><input type="checkbox" name="jackValues" value="Creativity"> Creativity</label><label><input type="checkbox" name="jackValues" value="Community service"> Community service</label><label><input type="checkbox" name="jackValues" value="Faith or spirituality"> Faith / spirituality</label><label><input type="checkbox" name="jackValues" value="Resilience"> Resilience</label><label><input type="checkbox" name="jackValues" value="Other"> Other</label></div></div>
+                <div class="card soft"><label><strong>What opportunities would you most like Jack to have available in the future?</strong></label><div class="checkgrid"><label><input type="checkbox" name="jackOpportunities" value="College education"> College education</label><label><input type="checkbox" name="jackOpportunities" value="Trade school"> Trade school</label><label><input type="checkbox" name="jackOpportunities" value="Graduate education"> Graduate education</label><label><input type="checkbox" name="jackOpportunities" value="Starting a business"> Starting a business</label><label><input type="checkbox" name="jackOpportunities" value="Purchasing a home"> Purchasing a home</label><label><input type="checkbox" name="jackOpportunities" value="Travel experiences"> Travel experiences</label><label><input type="checkbox" name="jackOpportunities" value="Financial independence"> Financial independence</label><label><input type="checkbox" name="jackOpportunities" value="Access to family investments"> Access to family investments</label><label><input type="checkbox" name="jackOpportunities" value="Other"> Other</label></div></div>
+                <div class="field"><label>Is there anything specific you hope to teach, model, or pass on to Jack?</label><textarea name="jackLegacy" placeholder="Values, lessons, opportunities, responsibilities, family traditions..."></textarea></div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="field"><label>Which statement best reflects your family philosophy for James and Jack?</label><select name="childrenPhilosophy"><option></option><option>Leave our children every possible financial advantage</option><option>Give our children opportunities, but encourage independence</option><option>Help them build wealth while teaching responsibility</option><option>Prioritize experiences and values over financial inheritance</option><option>Create a family legacy that lasts multiple generations</option><option>We are still figuring this out</option></select></div>
+              <div class="field"><label>If James and Jack were adults 20 years from now, what would make you feel proudest as parents?</label><textarea name="childrenProudest" placeholder="Describe the outcome that would make all of this planning feel worthwhile..."></textarea></div>
+            </div>
+          </section>
+
+          <section class="section" data-title="Time Freedom">
+            <div class="eyebrow">Step 8</div><h2>Time Freedom, Lifestyle Design & Capacity Planning</h2><p class="helper">Capital Architecture is not just about investments. It is about using capital to increase capacity, reduce friction, and improve quality of life without assuming which spouse is responsible for career, household, parenting, or family responsibilities. Both Cole and Jessica should answer independently.</p>
+            <div class="card edu"><strong>Purpose:</strong> This section helps identify where additional resources could buy back time, reduce stress, and create more flexibility for each person and for the family as a whole.</div>
+            <div class="grid">
+              <div class="splitCard">
+                <div class="personHead">Cole's Individual Reflection</div>
+                <div class="card soft"><label><strong>If additional financial resources became available, which areas of life would Cole most like additional support in?</strong></label><div class="checkgrid"><label><input type="checkbox" name="coleSupportAreas" value="Household responsibilities"> Household responsibilities</label><label><input type="checkbox" name="coleSupportAreas" value="Childcare and family logistics"> Childcare and family logistics</label><label><input type="checkbox" name="coleSupportAreas" value="Professional responsibilities"> Professional responsibilities</label><label><input type="checkbox" name="coleSupportAreas" value="Administrative tasks"> Administrative tasks</label><label><input type="checkbox" name="coleSupportAreas" value="Health and wellness"> Health and wellness</label><label><input type="checkbox" name="coleSupportAreas" value="Travel and leisure"> Travel and leisure</label><label><input type="checkbox" name="coleSupportAreas" value="Continuing education"> Continuing education</label><label><input type="checkbox" name="coleSupportAreas" value="Personal interests and hobbies"> Personal interests and hobbies</label><label><input type="checkbox" name="coleSupportAreas" value="Community involvement"> Community involvement</label><label><input type="checkbox" name="coleSupportAreas" value="Caregiving responsibilities"> Caregiving responsibilities</label><label><input type="checkbox" name="coleSupportAreas" value="Other"> Other</label></div></div>
+                <div class="field"><label>If Cole gained an additional 10 hours per week, how would he ideally use that time?</label><textarea name="coleTenHours"></textarea></div>
+                <div class="card soft"><label><strong>Which areas of Cole's life currently feel most constrained by time, energy, or responsibilities?</strong></label><div class="checkgrid"><label><input type="checkbox" name="coleConstraints" value="Career"> Career</label><label><input type="checkbox" name="coleConstraints" value="Family"> Family</label><label><input type="checkbox" name="coleConstraints" value="Marriage/Relationship"> Marriage / relationship</label><label><input type="checkbox" name="coleConstraints" value="Personal Wellness"> Personal wellness</label><label><input type="checkbox" name="coleConstraints" value="Financial Planning"> Financial planning</label><label><input type="checkbox" name="coleConstraints" value="Education/Learning"> Education / learning</label><label><input type="checkbox" name="coleConstraints" value="Travel"> Travel</label><label><input type="checkbox" name="coleConstraints" value="Social Activities"> Social activities</label><label><input type="checkbox" name="coleConstraints" value="Community Service"> Community service</label><label><input type="checkbox" name="coleConstraints" value="Personal Interests"> Personal interests</label><label><input type="checkbox" name="coleConstraints" value="Other"> Other</label></div></div>
+                <div class="field"><label>Which statement best reflects Cole's desired future?</label><select name="coleWorkOption"><option></option><option>More flexibility</option><option>More personal freedom</option><option>More time with family</option><option>More career opportunities</option><option>More travel experiences</option><option>More peace of mind</option><option>More time for personal growth</option><option>Greater balance across all areas of life</option><option>Start, acquire, or build a business</option><option>Consulting, advisory work, or passion projects</option><option>Other</option></select></div>
+                <div class="card"><label><strong>How important is it that the payout increases Cole's time freedom and capacity?</strong></label><p class="small">This may include flexibility with work, family time, business building, personal growth, travel, wellness, or other areas Cole values.</p><div class="rangeRow"><input type="range" min="1" max="10" value="7" name="coleFlexImportance" id="coleFlexImportance"><div class="bigNumber" id="coleFlexOut">7/10</div></div></div>
+              </div>
+              <div class="splitCard">
+                <div class="personHead">Jessica's Individual Reflection</div>
+                <div class="card soft"><label><strong>If additional financial resources became available, which areas of life would Jessica most like additional support in?</strong></label><div class="checkgrid"><label><input type="checkbox" name="jessSupportAreas" value="Household responsibilities"> Household responsibilities</label><label><input type="checkbox" name="jessSupportAreas" value="Childcare and family logistics"> Childcare and family logistics</label><label><input type="checkbox" name="jessSupportAreas" value="Professional responsibilities"> Professional responsibilities</label><label><input type="checkbox" name="jessSupportAreas" value="Administrative tasks"> Administrative tasks</label><label><input type="checkbox" name="jessSupportAreas" value="Health and wellness"> Health and wellness</label><label><input type="checkbox" name="jessSupportAreas" value="Travel and leisure"> Travel and leisure</label><label><input type="checkbox" name="jessSupportAreas" value="Continuing education"> Continuing education</label><label><input type="checkbox" name="jessSupportAreas" value="Personal interests and hobbies"> Personal interests and hobbies</label><label><input type="checkbox" name="jessSupportAreas" value="Community involvement"> Community involvement</label><label><input type="checkbox" name="jessSupportAreas" value="Caregiving responsibilities"> Caregiving responsibilities</label><label><input type="checkbox" name="jessSupportAreas" value="Other"> Other</label></div></div>
+                <div class="field"><label>If Jessica gained an additional 10 hours per week, how would she ideally use that time?</label><textarea name="jessTenHours"></textarea></div>
+                <div class="card soft"><label><strong>Which areas of Jessica's life currently feel most constrained by time, energy, or responsibilities?</strong></label><div class="checkgrid"><label><input type="checkbox" name="jessConstraints" value="Career"> Career</label><label><input type="checkbox" name="jessConstraints" value="Family"> Family</label><label><input type="checkbox" name="jessConstraints" value="Marriage/Relationship"> Marriage / relationship</label><label><input type="checkbox" name="jessConstraints" value="Personal Wellness"> Personal wellness</label><label><input type="checkbox" name="jessConstraints" value="Financial Planning"> Financial planning</label><label><input type="checkbox" name="jessConstraints" value="Education/Learning"> Education / learning</label><label><input type="checkbox" name="jessConstraints" value="Travel"> Travel</label><label><input type="checkbox" name="jessConstraints" value="Social Activities"> Social activities</label><label><input type="checkbox" name="jessConstraints" value="Community Service"> Community service</label><label><input type="checkbox" name="jessConstraints" value="Personal Interests"> Personal interests</label><label><input type="checkbox" name="jessConstraints" value="Other"> Other</label></div></div>
+                <div class="field"><label>Which statement best reflects Jessica's desired future?</label><select name="jessFreedomMeaning"><option></option><option>More flexibility</option><option>More personal freedom</option><option>More time with family</option><option>More career opportunities</option><option>More travel experiences</option><option>More peace of mind</option><option>More time for personal growth</option><option>Greater balance across all areas of life</option><option>Start, acquire, or build a business</option><option>Consulting, advisory work, or passion projects</option><option>Other</option></select></div>
+                <div class="card"><label><strong>How important is it that the payout increases Jessica's time freedom and capacity?</strong></label><p class="small">This may include flexibility with work, family time, professional support, personal growth, travel, wellness, or other areas Jessica values.</p><div class="rangeRow"><input type="range" min="1" max="10" value="8" name="jessSupportImportance" id="jessSupportImportance"><div class="bigNumber" id="jessSupportOut">8/10</div></div></div>
+              </div>
+            </div>
+            <div class="card edu"><strong>Family Capacity Planning:</strong> Rate how valuable each area would be if the liquidity event creates room to buy back time and reduce pressure for the family.</div>
+            <table class="miniTable"><thead><tr><th>Area</th><th>Family value rating</th></tr></thead><tbody id="supportRows"></tbody></table>
+            <div class="field"><label>Which five improvements would most improve your family's quality of life?</label><textarea name="familyQualityTop5" placeholder="Example: more family time, less stress, more personal freedom, reduced administrative burden, more travel..."></textarea></div>
+            <div class="field"><label>What does an ideal week look like for your family five years from now?</label><textarea name="idealWeek"></textarea></div>
+          </section>
+
+          <section class="section" data-title="Education">
+            <div class="eyebrow">Step 9</div><h2>Education, Risk Management & Learning Preferences</h2><p class="helper">Because you are first-time investors, this section helps Erik understand what each of you wants to learn and how involved you want to be before decisions are made.</p>
+            <table class="miniTable"><thead><tr><th>Capital Architecture Category</th><th>Cole interest</th><th>Jessica interest</th><th>Cole involvement</th><th>Jessica involvement</th><th>Cole learning style</th><th>Jessica learning style</th></tr></thead><tbody id="educationRows"></tbody></table>
+            <div class="field"><label>How would you prefer Erik to teach these topics?</label><select name="teachingStyle"><option></option><option>Just provide recommendations and summaries</option><option>Give us a high-level understanding</option><option>Teach us enough to make informed decisions</option><option>We want to understand the details behind the strategy</option><option>Different approach for Cole and Jessica</option></select></div>
+          </section>
+
+          <section class="section" data-title="Priorities">
+            <div class="eyebrow">Step 10</div><h2>Capital Architecture Priorities</h2><p class="helper">Please rate how important each area is to you individually. The summary will show similarities, differences, and an alignment score.</p>
+            <table class="miniTable"><thead><tr><th>Priority Area</th><th>Cole priority</th><th>Jessica priority</th></tr></thead><tbody id="priorityRows"></tbody></table>
+            <div class="grid"><div class="field"><label>Cole: top 3 topics for the next 12 months</label><textarea name="coleTop3" placeholder="Example: tax strategy, commercial real estate, passive income..."></textarea></div><div class="field"><label>Jessica: top 3 topics for the next 12 months</label><textarea name="jessTop3" placeholder="Example: estate planning, cash reserves, kids, risk management..."></textarea></div></div>
+            <div class="field"><label>Biggest concern about the upcoming liquidity event</label><select name="biggestConcern"><option></option><option>Paying unnecessary taxes</option><option>Making the wrong investment decisions</option><option>Losing money</option><option>Running out of money</option><option>Missing opportunities</option><option>Protecting the children</option><option>Choosing the right advisors</option><option>Not being aligned as a couple</option><option>Other</option></select></div>
+          </section>
+
+          <section class="section" data-title="What Happens Next">
+            <div class="eyebrow">Before Submission</div><h2>What Happens Next?</h2>
+            <p class="helper">Thank you for taking the time to thoughtfully share your goals, priorities, and vision for your family's future. This experience was designed to help Erik better understand what matters most before recommendations are made.</p>
+            <div class="card edu">
+              <h3 style="margin-top:0">This Discovery Is the Starting Point</h3>
+              <p>The purpose of this process is not to create a final financial plan today. The purpose is to understand your family's priorities, concerns, opportunities, and desired future before making important decisions after Cole's liquidity event.</p>
+              <p>Your answers will help Erik prepare a personalized <strong>Capital Architecture Blueprint™</strong> that is specific to Jessica, Cole, James, Jack, and the future you are trying to build together.</p>
+            </div>
+            <div class="grid">
+              <div class="card soft">
+                <h3 style="margin-top:0">What Erik Will Review</h3>
+                <ul>
+                  <li>Liquidity event planning assumptions</li>
+                  <li>Tax efficiency opportunities</li>
+                  <li>Family goals and priorities</li>
+                  <li>Passive income objectives</li>
+                  <li>Time freedom and lifestyle capacity goals</li>
+                  <li>Commercial real estate opportunities</li>
+                  <li>Risk management considerations</li>
+                  <li>Estate planning and asset protection opportunities</li>
+                  <li>James and Jack future opportunity planning</li>
+                </ul>
+              </div>
+              <div class="card soft">
+                <h3 style="margin-top:0">Before You Finish</h3>
+                <ol>
+                  <li>Review your responses.</li>
+                  <li>Go back and update anything that does not feel accurate.</li>
+                  <li>Continue to the final Summary of Findings.</li>
+                  <li>Download and save the branded PDF report.</li>
+                  <li>Email the report to Erik or upload it to your secure shared folder.</li>
+                </ol>
+                <p class="small"><strong>Reminder:</strong> There are no right or wrong answers. The most useful answers are the ones that are honest and current.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="section" data-title="Alignment Summary">
+            <div class="eyebrow">Final Summary</div><h2>Summary of Findings</h2><p class="helper">This shared summary is designed for Jessica, Cole, and Erik to review together. It highlights common themes, areas worth clarifying, and planning opportunities that can help shape a balanced Capital Architecture Blueprint.</p>
+            <div class="summaryBox"><div class="grid"><div><strong>Overall Alignment Score</strong><div class="score" id="alignmentScore">--%</div><p class="small">Calculated from individual ratings, income goals, debt preferences, home preferences, children and legacy priorities, education interests, and lifestyle flexibility answers.</p></div><div><strong>Planning Complexity</strong><div class="scoreSmall" id="complexityScore">Emerging Family Office</div><p class="small">Based on liquidity event, real estate interest, tax planning, estate planning, and income goals.</p></div></div></div>
+            <div class="grid"><div class="summaryBox"><h3>Areas of Shared Alignment</h3><div id="similarities"></div></div><div class="summaryBox"><h3>Areas to Explore Together</h3><div id="differences"></div></div></div>
+            <div class="summaryBox"><h3>Alignment Heat Map</h3><div id="heatmap"></div></div>
+            <div class="summaryBox"><h3>Bradham Family Capital Architecture Summary</h3><p class="small">This summary is generated automatically from your completed answers and is intended to support discussion. It is not a psychological, behavioral, legal, tax, investment, or insurance assessment.</p><div id="advisorNotes" class="narrative"></div></div>
+            <div class="summaryBox"><h3>Planning Notice</h3><p class="small">The observations in this summary are based solely on the responses provided during this Capital Architecture Discovery Process. They are intended to facilitate thoughtful discussion and planning. Recommendations, analysis, and strategies will be provided separately after Erik reviews your responses and supporting information.</p></div>
+            <div class="summaryBox edu"><h3>Final Step: Save & Submit Your Report</h3><p class="helper">Before closing this page, please save a branded PDF copy of your completed Capital Architecture™ Discovery Report and send it to Erik.</p><ol class="narrative"><li><strong>Review your answers and Summary of Findings.</strong> You may go back to any section and change your answers before finalizing.</li><li><strong>Generate the branded report.</strong> When everything looks complete, click <strong>Download Branded PDF Report</strong>. A print window will open with a polished report format.</li><li><strong>Save as PDF.</strong> In the print window, choose <strong>Save as PDF</strong> as the destination, then save the file.</li><li><strong>Name the file:</strong> <em>Bradham_Family_Capital_Architecture_Report_MMDDYYYY.pdf</em></li><li><strong>Email the PDF to:</strong> <a href="mailto:erik@goldentreewealth.com?subject=Capital%20Architecture%20Discovery%20Completed%20-%20Bradham%20Family">erik@goldentreewealth.com</a> with the subject line <strong>Capital Architecture Discovery Completed - Bradham Family</strong>, or upload it to the secure shared drive/folder provided by Golden Tree Wealth Partners.</li></ol><p class="small"><strong>Important:</strong> This standalone page does not automatically email, upload, or store your completed report. Please save the PDF before exiting or refreshing the page.</p></div>
+            <div class="note"><strong>Next step:</strong> Erik will use this output to prepare a personalized Capital Architecture Blueprint that reflects both Cole's and Jessica's perspectives and keeps the planning conversation focused on your family's goals, values, and vision for the future.</div>
+          </section>
+        </form>
+
+        <div class="buttons"><button class="btn secondary" id="prev" type="button">Back</button><button class="btn primary" id="next" type="button">Next</button><button class="btn secondary" id="printBtn" type="button">Print / Save PDF</button><button class="btn gold" id="brandedPdfBtn" type="button">Download Branded PDF Report</button></div>
+      </main>
+    </div>
+  </div>
+
+<script>
+const money = n => '$' + Number(n||0).toLocaleString();
+const pct = n => String(Math.round(n)) + '%';
+const monthlyExpenses = 17717;
+const sections = [...document.querySelectorAll('.section')];
+const nav = document.getElementById('stepnav');
+let current = 0;
+sections.forEach((s,i)=>{const li=document.createElement('li');li.innerHTML=`<span class="dot">${i+1}</span><span>${s.dataset.title}</span>`;li.onclick=()=>show(i);nav.appendChild(li);});
+function show(i){current=Math.max(0,Math.min(i,sections.length-1));sections.forEach((s,idx)=>s.classList.toggle('active',idx===current));[...nav.children].forEach((li,idx)=>li.classList.toggle('active',idx===current));document.getElementById('bar').style.width=((current+1)/sections.length*100)+'%';document.getElementById('progressText').textContent=`Step ${current+1} of ${sections.length}`;document.getElementById('prev').style.visibility=current===0?'hidden':'visible';document.getElementById('next').style.display=current===sections.length-1?'none':'inline-flex';document.getElementById('next').textContent='Next';if(current===sections.length-1) buildSummary();window.scrollTo({top:0,behavior:'smooth'});} 
+document.getElementById('prev').onclick=()=>show(current-1);document.getElementById('next').onclick=()=> current===sections.length-1 ? buildSummary() : show(current+1);document.getElementById('printBtn').onclick=()=>{buildSummary();window.print();};document.getElementById('brandedPdfBtn').onclick=()=>{buildSummary();generateBrandedPdfReport();};
+function val(id){const el=document.getElementById(id);return el?Number(el.value||0):0;}
+function field(name){return document.querySelector(`[name="${name}"]`)?.value || '';}
+function updateTax(){['bestTaxRate','worstTaxRate'].forEach(id=>{document.getElementById(id.replace('Rate','Out')).textContent=pct(val(id));});const low=val('lowPayout'), exp=val('expectedPayout'), best=val('bestPayout'), bestTax=val('bestTaxRate')/100, worstTax=val('worstTaxRate')/100;const rows=[['Low Case',low],['Expected Case',exp],['Best Case',best]].map(([label,gross])=>`<tr><td>${label}</td><td>${money(gross)}</td><td>${money(gross*(1-bestTax))}</td><td>${money(gross*(1-worstTax))}</td></tr>`).join('');document.getElementById('taxScenarioTable').innerHTML=`<table class="miniTable"><thead><tr><th>Scenario</th><th>Gross payout</th><th>Net after best-case tax</th><th>Net after worst-case tax</th></tr></thead><tbody>${rows}</tbody></table>`;}
+function updateIncome(){const cash=val('cashReserve');document.getElementById('cashReserveOut').textContent=money(cash);document.getElementById('monthsReserve').textContent=`Approx. ${(cash/monthlyExpenses).toFixed(1)} months of current expenses.`;[['coleMonthlyIncome','coleMonthlyOut','coleAnnualOut'],['jessMonthlyIncome','jessMonthlyOut','jessAnnualOut'],['familyMonthlyIncome','familyMonthlyOut','familyAnnualOut']].forEach(([id,out,annual])=>{const m=val(id);document.getElementById(out).textContent=money(m);const a=m*12;if(id==='familyMonthlyIncome'){document.getElementById(annual).textContent=`${money(a)} per year. At a 6% assumed income yield, this may require about ${money(a/0.06)} in income-producing capital.`;}else{document.getElementById(annual).textContent=`${money(a)} per year`;}});document.getElementById('coleFlexOut').textContent=val('coleFlexImportance')+'/10';document.getElementById('jessSupportOut').textContent=val('jessSupportImportance')+'/10';}
+['lowPayout','expectedPayout','bestPayout','bestTaxRate','worstTaxRate'].forEach(id=>document.getElementById(id)?.addEventListener('input',updateTax));['cashReserve','coleMonthlyIncome','jessMonthlyIncome','familyMonthlyIncome','coleFlexImportance','jessSupportImportance'].forEach(id=>document.getElementById(id)?.addEventListener('input',updateIncome));
+const categories=[['cre','Commercial Real Estate'],['business','Business Acquisition & Ownership'],['portfolio','Investment Portfolios'],['privateCredit','Private Credit & Alternative Income'],['cashValue','Cash Value Life Insurance'],['ltc','Long-Term Care Insurance'],['risk','Risk Management & Family Protection'],['estate','Estate Planning'],['assetProtection','Asset Protection'],['tax','Tax Strategy']];
+const eduBody=document.getElementById('educationRows');
+categories.forEach(([key,label])=>{eduBody.insertAdjacentHTML('beforeend',`<tr><td><strong>${label}</strong></td><td><input type="range" min="1" max="10" value="5" name="cole_${key}" data-scorepair="${key}"><span class="small" id="cole_${key}_out">5/10</span></td><td><input type="range" min="1" max="10" value="5" name="jess_${key}" data-scorepair="${key}"><span class="small" id="jess_${key}_out">5/10</span></td><td><select name="coleInvolve_${key}"><option></option><option>Fully passive / delegated</option><option>Review and approve opportunities</option><option>Semi-active with advisor support</option><option>Hands-on / active</option></select></td><td><select name="jessInvolve_${key}"><option></option><option>Fully passive / delegated</option><option>Review and approve opportunities</option><option>Semi-active with advisor support</option><option>Hands-on / active</option></select></td><td><select name="coleLearn_${key}"><option></option><option>Simple summary only</option><option>High-level understanding</option><option>Enough to make informed decisions</option><option>Detailed education over time</option></select></td><td><select name="jessLearn_${key}"><option></option><option>Simple summary only</option><option>High-level understanding</option><option>Enough to make informed decisions</option><option>Detailed education over time</option></select></td></tr>`);});
+const priorityBody=document.getElementById('priorityRows');
+categories.concat([['children','Children & Family Legacy'],['home','Future Home'],['passiveIncome','Passive Income Generation']]).forEach(([key,label])=>{priorityBody.insertAdjacentHTML('beforeend',`<tr><td><strong>${label}</strong></td><td><input type="range" min="1" max="10" value="5" name="coleP_${key}" data-prioritypair="${key}"><span class="small" id="coleP_${key}_out">5/10</span></td><td><input type="range" min="1" max="10" value="5" name="jessP_${key}" data-prioritypair="${key}"><span class="small" id="jessP_${key}_out">5/10</span></td></tr>`);});
+const supportServices=[['household','Household Services'],['childcare','Childcare and Family Logistics'],['admin','Administrative Assistance'],['professional','Professional Support'],['mealprep','Meal Preparation Services'],['travel','Travel Assistance'],['wellness','Personal Wellness Resources'],['caregiving','Caregiving Support']];
+const supportBody=document.getElementById('supportRows');
+supportServices.forEach(([key,label])=>{supportBody?.insertAdjacentHTML('beforeend',`<tr><td><strong>${label}</strong></td><td><input type="range" min="1" max="10" value="5" name="support_${key}"><span class="small" id="support_${key}_out">5/10</span></td></tr>`);});
+document.addEventListener('input',e=>{if(e.target.matches('input[type="range"]')){const name=e.target.name;const out=document.getElementById(name+'_out');if(out) out.textContent=e.target.value+'/10';}});
+function numName(name){return Number(document.querySelector(`[name="${name}"]`)?.value || 0);}
+function diffToScore(a,b,maxDiff=10){return Math.max(0,100-(Math.abs(a-b)/maxDiff*100));}
+function categoricalScore(a,b){if(!a&&!b)return null;if(a===b)return 100;if(!a||!b)return 50;if(a==='Unsure'||b==='Unsure'||a==='Not sure yet'||b==='Not sure yet')return 70;return 0;}
+function fmtItem(x){return x.type==='Dollar Target'?money(x.cole):x.type==='Preference'?x.cole:x.cole+'/10';}
+function fmtItemJ(x){return x.type==='Dollar Target'?money(x.jess):x.type==='Preference'?x.jess:x.jess+'/10';}
+
+function checkedValues(name){return [...document.querySelectorAll(`input[name="${name}"]:checked`)].map(x=>x.value);}
+function topScores(prefix, source, limit=3){
+  return source.map(([key,label])=>({key,label,score:numName(prefix+key)})).sort((a,b)=>b.score-a.score).slice(0,limit).filter(x=>x.score>0);
+}
+function sentenceList(arr){
+  if(!arr || !arr.length) return '';
+  if(arr.length===1) return arr[0];
+  if(arr.length===2) return arr[0]+' and '+arr[1];
+  return arr.slice(0,-1).join(', ')+', and '+arr[arr.length-1];
+}
+function narrativeTone(score){
+  if(score>=85) return 'strong natural alignment';
+  if(score>=70) return 'healthy alignment with a few valuable discussion points';
+  if(score>=55) return 'emerging alignment that will benefit from guided conversation';
+  return 'several important differences that are worth slowing down and discussing carefully';
+}
+function buildNarrative(avg, items, notes){
+  const family=field('familyName')||'Bradham Family';
+  const coleTop=topScores('coleP_', categories.concat([['children','Children & Family Legacy'],['home','Future Home'],['passiveIncome','Passive Income Generation']]),3);
+  const jessTop=topScores('jessP_', categories.concat([['children','Children & Family Legacy'],['home','Future Home'],['passiveIncome','Passive Income Generation']]),3);
+  const coleInterest=topScores('cole_', categories,3);
+  const jessInterest=topScores('jess_', categories,3);
+  const shared=items.filter(x=>x.score>=80).sort((a,b)=>b.score-a.score).slice(0,4).map(x=>x.label);
+  const gaps=items.filter(x=>x.score<75).sort((a,b)=>a.score-b.score).slice(0,4).map(x=>x.label);
+  const coleIncome=val('coleMonthlyIncome'), jessIncome=val('jessMonthlyIncome'), famIncome=val('familyMonthlyIncome');
+  const highSupport=supportServices.filter(([key])=>numName('support_'+key)>=8).map(([,label])=>label);
+  const coleFreedom=field('coleWorkOption') || field('coleFreedomMeaning');
+  const jessFreedom=field('jessFreedomMeaning');
+  const concern=field('biggestConcern');
+  const children=field('childrenPhilosophy');
+  const james=field('jamesLegacy');
+  const jack=field('jackLegacy');
+  const proud=field('childrenProudest');
+  const coleThemes=(coleTop.length?coleTop:coleInterest).map(x=>x.label.toLowerCase());
+  const jessThemes=(jessTop.length?jessTop:jessInterest).map(x=>x.label.toLowerCase());
+
+  let opening=`<h4>${family} Capital Architecture Summary</h4><div class="callout"><p><strong>Alignment Score: ${avg}%.</strong> Based on your responses, your family appears to have ${narrativeTone(avg)}. This score is not a judgment or a personality assessment. It is simply a planning tool that helps identify where your answers are similar and where additional discussion may be useful.</p></div>`;
+
+  let vision=`<h4>Family Vision</h4><p>Based on your responses, your family appears focused on creating greater flexibility, security, and opportunity while maintaining alignment with your long-term values and priorities. Your answers suggest that financial success is not only about investment performance. It is also about creating meaningful options, reducing future stress, protecting your family, and increasing freedom of choice.</p>`;
+
+  let cole=`<h4>Cole's Perspective</h4><p>Cole's answers appear to place emphasis on ${sentenceList(coleThemes) || 'creating a clearer path forward after the liquidity event'}. These themes will help guide future conversations around work flexibility, income production, investment education, and how the proceeds may create more optionality over time.</p>`;
+
+  let jess=`<h4>Jessica's Perspective</h4><p>Jessica's answers appear to place emphasis on ${sentenceList(jessThemes) || 'clarity, security, family priorities, and thoughtful decision-making'}. Her perspective is important because Capital Architecture is not only about where money is invested; it is also about how capital supports family stability, time freedom, peace of mind, and everyday quality of life.</p>`;
+
+  let income=`<h4>Passive Income & Financial Flexibility</h4><p>Cole selected a monthly passive income target of <strong>${money(coleIncome)}</strong>. Jessica selected <strong>${money(jessIncome)}</strong>. The family target is <strong>${money(famIncome)}</strong> per month, or approximately <strong>${money(famIncome*12)}</strong> per year. These numbers provide a practical starting point for modeling future commercial real estate, investment portfolio, private credit, business acquisition, and other income-producing strategies.</p>`;
+
+  let freedom=`<h4>Time Freedom & Lifestyle Design</h4><p>For Cole, financial flexibility appears connected to <strong>${coleFreedom || 'having more choice over work, business, and time'}</strong>. For Jessica, financial flexibility appears connected to <strong>${jessFreedom || 'having more capacity, balance, and peace of mind'}</strong>. These answers help ensure the plan does not only solve for dollars, but also for the kind of life, schedule, and family rhythm you both want to create.</p>`;
+  if(highSupport.length){freedom += `<p>The family capacity areas that scored highest were <strong>${sentenceList(highSupport)}</strong>. These may be worth reviewing as quality-of-life investments that can reduce pressure and create more time, not merely as expenses.</p>`;}
+
+  let alignment=`<h4>Areas of Strong Alignment</h4><p>${shared.length?`Your strongest shared themes appear to be <strong>${sentenceList(shared)}</strong>. These areas may provide a strong foundation for the first phase of your Capital Architecture Blueprint because they already appear to matter to both of you.`:'As more answers are completed, this section will identify the strongest areas of shared priority.'}</p>`;
+
+  let discussion=`<h4>Areas for Further Discussion</h4><p>${gaps.length?`The areas most worth discussing together are <strong>${sentenceList(gaps)}</strong>. These differences are not necessarily disagreements. In many cases, they simply reflect different perspectives, experiences, or priorities. They tell Erik where to slow down, provide education, model options, and make sure the final plan feels balanced.`:'No major differences were detected from the completed answers.'}</p>`;
+
+  let opportunities=`<h4>Opportunities Identified</h4><p>Based on your responses, future planning discussions may include tax-efficient liquidity event planning, passive income strategies, commercial real estate opportunities, estate planning considerations, risk management, asset protection, family legacy planning, and education around the areas where you want more clarity before making decisions.</p>`;
+
+  let legacy=`<h4>James & Jack</h4><p>Your answers about James and Jack give this plan its family-centered purpose. The selected family philosophy was: <strong>${children || 'not yet selected'}</strong>. ${james?`For James, one theme to carry forward is: <em>${james}</em> `:''}${jack?`For Jack, one theme to carry forward is: <em>${jack}</em> `:''}${proud?`The future-parenting vision that stood out was: <em>${proud}</em>`:''}</p>`;
+
+  let next=`<h4>Next Phase</h4><p>The purpose of this discovery process is not to make immediate financial decisions. It provides a foundation for developing a personalized Capital Architecture Blueprint designed around your family's goals, priorities, opportunities, and long-term vision. ${concern?`Because your biggest stated concern is <strong>${concern}</strong>, that topic should be addressed early in the next planning conversation.`:''}</p>`;
+
+  let bullets = notes.length ? `<ul>${notes.map(n=>`<li>${n}</li>`).join('')}</ul>` : '';
+  let notice=`<h4>Important Planning Notice</h4><p>The observations contained within this summary are based solely on the responses provided during the Capital Architecture Discovery Process. This summary is intended to facilitate discussion and planning and should not be interpreted as a psychological, behavioral, legal, tax, investment, or insurance assessment. Recommendations, analyses, and strategies will be provided separately following a review of your responses and supporting information.</p>`;
+  return opening+vision+cole+jess+income+freedom+alignment+discussion+opportunities+legacy+next+`<h4>Planning Themes to Review Together</h4>${bullets}`+notice;
+}
+
+function escHtml(v){return String(v ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));}
+function responseLabel(el){
+  if(!el) return '';
+  if(el.type==='range') return `${el.value}/10`;
+  if(el.type==='checkbox' || el.type==='radio') return el.checked ? el.value : '';
+  return el.value || '';
+}
+function collectResponseSections(){
+  const rows=[];
+  sections.forEach((section, idx)=>{
+    if(idx===sections.length-1) return;
+    const title=section.dataset.title || `Step ${idx+1}`;
+    const entries=[];
+    const groups=new Map();
+    section.querySelectorAll('input, select, textarea').forEach(el=>{
+      if(!el.name && !el.id) return;
+      const key=el.name || el.id;
+      if(el.type==='checkbox'){
+        if(el.checked){
+          if(!groups.has(key)) groups.set(key, []);
+          groups.get(key).push(el.value);
+        }
+        return;
+      }
+      if(el.type==='radio'){
+        if(el.checked) entries.push([prettyKey(key), el.value]);
+        return;
+      }
+      const val=responseLabel(el);
+      if(val!=='' && val!==undefined) entries.push([prettyKey(key), val]);
+    });
+    groups.forEach((vals,key)=>entries.push([prettyKey(key), vals.join(', ')]));
+    if(entries.length) rows.push({title, entries});
+  });
+  return rows;
+}
+function prettyKey(key){
+  return String(key)
+    .replace(/^cole_/,'Cole: ')
+    .replace(/^jess_/,'Jessica: ')
+    .replace(/^coleP_/,'Cole Priority: ')
+    .replace(/^jessP_/,'Jessica Priority: ')
+    .replace(/^coleInvolve_/,'Cole Involvement: ')
+    .replace(/^jessInvolve_/,'Jessica Involvement: ')
+    .replace(/^coleLearn_/,'Cole Learning Style: ')
+    .replace(/^jessLearn_/,'Jessica Learning Style: ')
+    .replace(/^support_/,'Family Support: ')
+    .replace(/([A-Z])/g,' $1')
+    .replace(/_/g,' ')
+    .replace(/\b\w/g,c=>c.toUpperCase())
+    .trim();
+}
+function reportRow(label, value){return `<tr><th>${escHtml(label)}</th><td>${escHtml(value || 'Not provided')}</td></tr>`;}
+function getTaxRowsForReport(){
+  const low=val('lowPayout'), exp=val('expectedPayout'), best=val('bestPayout'), bestTax=val('bestTaxRate')/100, worstTax=val('worstTaxRate')/100;
+  return [['Low Case',low],['Expected Case',exp],['Best Case',best]].map(([label,gross])=>`<tr><td>${label}</td><td>${money(gross)}</td><td>${money(gross*(1-bestTax))}</td><td>${money(gross*(1-worstTax))}</td></tr>`).join('');
+}
+function generateBrandedPdfReport(){
+  buildSummary();
+  const today=new Date().toLocaleDateString();
+  const alignment=document.getElementById('alignmentScore')?.textContent || '--%';
+  const complexity=document.getElementById('complexityScore')?.textContent || '';
+  const narrative=document.getElementById('advisorNotes')?.innerHTML || '';
+  const similarities=document.getElementById('similarities')?.innerHTML || '';
+  const differences=document.getElementById('differences')?.innerHTML || '';
+  const heatmap=document.getElementById('heatmap')?.innerHTML || '';
+  const responseSections=collectResponseSections().map(sec=>`<section class="page-section"><h2>${escHtml(sec.title)}</h2><table>${sec.entries.map(([k,v])=>reportRow(k,v)).join('')}</table></section>`).join('');
+  const familyPassive=val('familyMonthlyIncome');
+  const requiredCapital=familyPassive*12/0.06;
+  const report=`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Bradham Family Capital Architecture Report</title><style>
+    @page{margin:0.55in;}*{box-sizing:border-box}body{font-family:Inter,Segoe UI,Arial,sans-serif;color:#1f2937;margin:0;background:#fff}.cover{background:#101827;color:#fff;padding:34px;border-radius:0 0 24px 24px;position:relative;overflow:hidden}.cover:after{content:"";position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:50%;background:rgba(199,164,75,.18)}.brand{letter-spacing:.08em;text-transform:uppercase;color:#c7a44b;font-weight:900;font-size:12px}.cover h1{font-size:32px;line-height:1.08;margin:9px 0}.cover p{color:#d1d5db;max-width:760px;line-height:1.5}.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.pill{border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:7px 10px;font-size:12px}.wrap{padding:26px}.scoreGrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:18px 0}.scoreCard{border:1px solid #e5e7eb;border-radius:16px;padding:16px;background:#f9fafb}.score{font-size:38px;color:#c7a44b;font-weight:950}h2{font-size:21px;margin:24px 0 10px;color:#101827;border-bottom:2px solid #c7a44b;padding-bottom:6px}h3{font-size:17px;color:#101827;margin:18px 0 8px}.narrative{font-size:14px;line-height:1.6}.narrative h4{font-size:18px;margin:18px 0 6px;color:#101827}.narrative .callout{background:#fffbeb;border:1px solid #ead9aa;border-radius:14px;padding:12px;margin:10px 0}table{width:100%;border-collapse:collapse;margin:10px 0 16px;font-size:12px}th,td{border:1px solid #e5e7eb;padding:8px;text-align:left;vertical-align:top}th{background:#f9fafb;width:36%}.badge{display:inline-block;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:900}.greenBg{background:#dff7ef;color:#065f46}.yellowBg{background:#fef3c7;color:#92400e}.redBg{background:#fee2e2;color:#991b1b}.page-section{break-inside:avoid;page-break-inside:avoid}.footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:12px;color:#6b7280;font-size:11px}.small{color:#6b7280;font-size:12px}.summary-columns{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media print{.page-break{page-break-before:always}.cover{border-radius:0}.wrap{padding:20px}.scoreGrid{grid-template-columns:1fr 1fr 1fr}.summary-columns{grid-template-columns:1fr 1fr}}
+  </style></head><body>
+    <div class="cover"><div class="brand">Golden Tree Wealth Partners | Capital Architecture™</div><h1>Bradham Family Capital Architecture Discovery Report</h1><p>A branded summary of Jessica and Cole's responses, shared planning themes, areas for discussion, and early Capital Architecture priorities.</p><div class="meta"><div class="pill">Prepared: ${escHtml(today)}</div><div class="pill">Private & Confidential</div><div class="pill">For planning discussion only</div></div></div>
+    <div class="wrap">
+      <div class="scoreGrid"><div class="scoreCard"><strong>Overall Alignment</strong><div class="score">${escHtml(alignment)}</div><p class="small">Based on completed individual answers.</p></div><div class="scoreCard"><strong>Planning Complexity</strong><h3>${escHtml(complexity)}</h3><p class="small">Preliminary planning category.</p></div><div class="scoreCard"><strong>Family Passive Income Goal</strong><h3>${money(familyPassive)}/month</h3><p class="small">Approx. ${money(requiredCapital)} required at a 6% assumed income yield.</p></div></div>
+      <section><h2>Liquidity Event Planning Range</h2><table><thead><tr><th>Scenario</th><th>Gross Payout</th><th>Net After Best-Case Tax</th><th>Net After Worst-Case Tax</th></tr></thead><tbody>${getTaxRowsForReport()}</tbody></table></section>
+      <section><h2>Bradham Family Capital Architecture Summary</h2><div class="narrative">${narrative}</div></section>
+      <div class="summary-columns page-break"><section><h2>Areas of Shared Alignment</h2><div class="narrative">${similarities}</div></section><section><h2>Areas to Explore Together</h2><div class="narrative">${differences}</div></section></div>
+      <section><h2>Alignment Heat Map</h2><div class="narrative">${heatmap}</div></section>
+      <div class="page-break"><h2>Detailed Response Appendix</h2><p class="small">These responses are included so Jessica, Cole, and Erik can review the full context behind the summary.</p>${responseSections}</div>
+      <div class="footer"><strong>Confidentiality & planning notice:</strong> This report is intended solely for Jessica, Cole, and Golden Tree Wealth Partners for Capital Architecture discovery and planning discussions. It is not legal, tax, investment, insurance, or accounting advice. Recommendations should be reviewed with the appropriate licensed professionals before implementation.</div>
+    </div>
+  </body></html>`;
+  const w=window.open('', '_blank');
+  if(!w){alert('Please allow pop-ups for this page so the branded PDF report can open.');return;}
+  w.document.open();w.document.write(report);w.document.close();
+  setTimeout(()=>{w.focus();w.print();},500);
+}
+
+function buildSummary(){updateTax();updateIncome();let items=[];categories.forEach(([key,label])=>{const c=numName('cole_'+key), j=numName('jess_'+key);items.push({label,type:'Learning Interest',cole:c,jess:j,score:diffToScore(c,j,10),diff:Math.abs(c-j)});const cp=numName('coleP_'+key), jp=numName('jessP_'+key);items.push({label,type:'Priority',cole:cp,jess:jp,score:diffToScore(cp,jp,10),diff:Math.abs(cp-jp)});});['children','home','passiveIncome'].forEach(key=>{const label=key==='children'?'Children & Family Legacy':key==='home'?'Future Home':'Passive Income Generation';const cp=numName('coleP_'+key), jp=numName('jessP_'+key);items.push({label,type:'Priority',cole:cp,jess:jp,score:diffToScore(cp,jp,10),diff:Math.abs(cp-jp)});});
+const coleInc=val('coleMonthlyIncome'), jessInc=val('jessMonthlyIncome');items.push({label:'Monthly Passive Income Target',type:'Dollar Target',cole:coleInc,jess:jessInc,score:diffToScore(coleInc,jessInc,50000),diff:Math.abs(coleInc-jessInc)});items.push({label:'Time Freedom & Capacity Importance',type:'Lifestyle Flexibility',cole:val('coleFlexImportance'),jess:val('jessSupportImportance'),score:diffToScore(val('coleFlexImportance'),val('jessSupportImportance'),10),diff:Math.abs(val('coleFlexImportance')-val('jessSupportImportance') )});[['Auto Loan Strategy','coleAuto','jessAuto'],['Student Loan Strategy','coleStudent','jessStudent'],['Mortgage Strategy','coleMortgage','jessMortgage'],['Credit Card Strategy','coleCredit','jessCredit'],['Future Home Preference','coleHomePlan','jessHomePlan']].forEach(([label,cName,jName])=>{const c=field(cName),j=field(jName);items.push({label,type:'Preference',cole:c||'Not answered',jess:j||'Not answered',score:categoricalScore(c,j),diff:c===j?0:1});});categories.forEach(([key,label])=>{const ci=field('coleInvolve_'+key),ji=field('jessInvolve_'+key);items.push({label:label+' Involvement Level',type:'Preference',cole:ci||'Not answered',jess:ji||'Not answered',score:categoricalScore(ci,ji),diff:ci===ji?0:1});const cl=field('coleLearn_'+key),jl=field('jessLearn_'+key);items.push({label:label+' Learning Style',type:'Preference',cole:cl||'Not answered',jess:jl||'Not answered',score:categoricalScore(cl,jl),diff:cl===jl?0:1});});
+const scoredItems=items.filter(x=>x.score!==null && !Number.isNaN(x.score));const avg=scoredItems.length?Math.round(scoredItems.reduce((a,b)=>a+b.score,0)/scoredItems.length):0;document.getElementById('alignmentScore').textContent=avg+'%';
+const strong=scoredItems.filter(x=>x.score>=80).sort((a,b)=>b.score-a.score).slice(0,7);const gaps=scoredItems.filter(x=>x.score<80).sort((a,b)=>a.score-b.score).slice(0,7);
+document.getElementById('similarities').innerHTML=strong.length?strong.map(x=>`<p><span class="badge greenBg">${Math.round(x.score)}%</span> <strong>${x.label}</strong> (${x.type})<br><span class="small">Cole: ${fmtItem(x)} | Jessica: ${fmtItemJ(x)}</span></p>`).join(''):'<p class="small">Complete more answers to identify strong similarities.</p>';
+document.getElementById('differences').innerHTML=gaps.length?gaps.map(x=>`<p><span class="badge ${x.score<60?'redBg':'yellowBg'}">${Math.round(x.score)}%</span> <strong>${x.label}</strong> (${x.type})<br><span class="small">Cole: ${fmtItem(x)} | Jessica: ${fmtItemJ(x)}</span></p>`).join(''):'<p class="success">No major differences detected from completed answers.</p>';
+const heat=scoredItems.filter((v,i,a)=>a.findIndex(t=>t.label===v.label)===i).slice(0,14).map(x=>{let cls=x.score>=80?'greenBg':x.score>=60?'yellowBg':'redBg';let label=x.score>=80?'Strong Alignment':x.score>=60?'Moderate Difference':'Significant Difference';return `<p><span class="badge ${cls}">${label}</span> ${x.label}</p>`;}).join('');document.getElementById('heatmap').innerHTML=heat||'<p class="small">Complete more answers to generate the alignment heat map.</p>';
+let notes=[];if(field('coleAuto')&&field('jessAuto')&&field('coleAuto')!==field('jessAuto')) notes.push('Auto loan strategy is an area to review together. The next conversation can compare interest-rate savings, monthly payment relief, and the comfort of eliminating this liability.');if(field('coleMortgage')&&field('jessMortgage')&&field('coleMortgage')!==field('jessMortgage')) notes.push('Mortgage strategy is an area to model side by side. Keeping the current mortgage, making a partial principal reduction, and paying it off can each be compared before deciding.');if(Math.abs(coleInc-jessInc)>=5000) notes.push('The passive income targets are meaningfully different. This is useful because it helps clarify the lifestyle assumptions behind each number before setting final allocation targets.');if(numName('jess_cashValue')>=7||numName('cole_cashValue')>=7) notes.push('Cash value life insurance may be worth learning more about as part of liquidity, protection, and long-term planning.');if(numName('jess_ltc')>=7||numName('cole_ltc')>=7) notes.push('Long-term care planning may be worth exploring as part of broader family risk management and future healthcare planning.');if(numName('jess_estate')>=7||numName('cole_estate')>=7||numName('jess_assetProtection')>=7||numName('cole_assetProtection')>=7) notes.push('Estate planning and asset protection appear relevant to the broader Capital Architecture Blueprint, especially as future assets, real estate, and family legacy goals develop.');if(numName('cole_business')-numName('jess_business')>=3) notes.push('Business acquisition may need a careful conversation around involvement level, risk, time commitment, and whether it supports the family lifestyle both of you want.');if(numName('jess_business')-numName('cole_business')>=3) notes.push('Business acquisition interest appears stronger from Jessica than Cole. The next step should clarify whether this is about ownership, income, flexibility, or long-term family opportunity.');if(numName('jess_cre')>=7&&numName('cole_cre')>=7) notes.push('Commercial real estate appears to be a strong shared opportunity area and may deserve priority in the future allocation discussion.');const highSupport=supportServices.filter(([key])=>numName('support_'+key)>=8).map(([,label])=>label);if(highSupport.length) notes.push('Time freedom and capacity planning should be included in the capital plan. Highest-rated support areas: '+highSupport.join(', ')+'.');if(val('coleFlexImportance')>=8||val('jessSupportImportance')>=8) notes.push('Buying back time appears important. The plan should consider how capital can create flexibility, reduce stress, and improve quality of life for both Cole and Jessica.');if(field('childrenPhilosophy')) notes.push('James and Jack are central to the family legacy conversation. Family philosophy selected: '+field('childrenPhilosophy')+'.');if(field('jamesLegacy')||field('jackLegacy')||field('childrenProudest')) notes.push('The responses about James and Jack can help personalize education funding, trust planning, real estate decisions, and long-term family legacy recommendations.');if(field('biggestConcern')) notes.push('The biggest stated concern is: '+field('biggestConcern')+'. This should guide the first planning conversation after the assessment.');if(!notes.length) notes.push('Complete more answers to generate a shared summary of findings.');document.getElementById('advisorNotes').innerHTML=buildNarrative(avg, scoredItems, notes);
+let complexity='Emerging Family Office';const exp=val('expectedPayout'), catsHigh=items.filter(x=>x.cole>=8||x.jess>=8).length;if(exp>=3000000||catsHigh>=10) complexity='Advanced Planning / Emerging Family Office';if(exp>=5000000) complexity='Family Office-Level Planning';document.getElementById('complexityScore').textContent=complexity;}
+updateTax();updateIncome();show(0);
+</script>
+</body>
+</html>
